@@ -12,13 +12,13 @@ jobs:
         python-version: "3.10"
     - name: Produce Test 1 Output
       run: python find_lowest_number.py test_data/test1_input.txt test_output1.txt
-    - name: Test 1
+    - name: Test 1 - File with 10 numbers
       run: diff test_data/test1_expected.txt test_output1.txt
     - name: Produce Test 2 Output
       run: python find_lowest_number.py test_data/test2_input.txt test_output2.txt
-    - name: Test 2
+    - name: Test 2 - File with 1 number
       run: diff test_data/test2_expected.txt test_output2.txt
     - name: Produce Test 3 Output
       run: python find_lowest_number.py test_data/test3_input.txt test_output3.txt
-    - name: Test 3
+    - name: Test 3 - File with no numbers
       run: test_data/test3_expected.txt test_output3.txt
