@@ -1,0 +1,24 @@
+name: Find Number Test
+on: [push]
+jobs:
+  find_number_test:
+    name: Find Number Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Produce Test 1 Output
+      run: python find_lowest_number.py > actual1.txt
+    - name: Test 1
+      run: diff expected1.txt actual1.txt
+    - name: Produce Test 2 Output
+      run: python find_lowest_number.py > actual2.txt
+    - name: Test 2
+      run: diff expected2.txt actual2.txt
+    - name: Produce Test 3 Output
+      run: python find_lowest_number.py > actual2.txt
+    - name: Test 3
+      run: diff expected2.txt actual2.txt
