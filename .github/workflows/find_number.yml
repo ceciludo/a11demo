@@ -20,9 +20,5 @@ jobs:
       run: diff test_data/test2_expected.txt test_output2.txt
     - name: Produce Test 3 Output
       run: python find_lowest_number.py test_data/test3_input.txt test_output3.txt
-    - name: Fix permissions for expected test files
-      run: chmod 644 test_data/test3_expected.txt
-    - name: Make test file writable
-      run: chmod 666 test_data/test3_expected.txt
     - name: Test 3 - File with no numbers
-      run: test_data/test3_expected.txt test_output3.txt
+      run: diff test_data/test3_expected.txt test_output3.txt
